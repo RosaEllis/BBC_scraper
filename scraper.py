@@ -44,11 +44,18 @@ for td in tds:
 
 # below is a for loop, inside the for loop is a dictionary. 
 # a dictionary stores pairs of information, which (I think) are the a column header and the...
-#... info that goes in the column. So for record = { "td" : td.text } "td" is the column header and td.txt givens the values to go in the colum 
+#... info that goes in the column. So for record = { "td" : td.text } "td" is the column header and td.txt givens 
+# the values to go in the column
+# The documentation gives this as the template: scraperwiki.sqlite.save(unique_keys, data[, table_name="swdata", verbose=2])
+# ... so that means "td" is the unique key? 
 
 for td in tds:
      record = { "td" : td.text } # column name and value
-     scraperwiki.sqlite.save(["td"], record) # save the records one by one
+     try:
+        scraperwiki.sqlite.save(["td"], record) # save the records one by one
+     except: 
+        record = { "td" : "NO ENTRY" } 
+        scraperwiki.sqlite.save(["td"], record) 
     
 # -----------------------------------------------------------------------------
 # Go back to the Tutorials page and continue to Tutorial 3 to learn about 
