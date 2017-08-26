@@ -1,2 +1,2 @@
-lala = rosa
+lala = "rosa"
 print lala 
