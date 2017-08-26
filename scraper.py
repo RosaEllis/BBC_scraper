@@ -16,13 +16,19 @@ print html
 # the HTML that was inside <td></td> tags.
 # We use lxml, which is a Python library especially for parsing html.
 # -----------------------------------------------------------------------------
+# below is importing a library called lxml.html  
+import lxml.html
+# below makes a variable called root that is using the function called fromstring (from the lxml.html library)... 
+# it uses the html variable created above and it into an lxml object
+ 
+root = lxml.html.fromstring(html) 
+# so 'root' now holds the results of the fromstring function being on the html we've scraped
+# 
 
-#import lxml.html
-#root = lxml.html.fromstring(html) # turn our HTML into an lxml object
-#tds = root.cssselect('td') # get all the <td> tags
-#for td in tds:
-#    print lxml.html.tostring(td) # the full HTML tag
-#    print td.text                # just the text inside the HTML tag
+tds = root.cssselect('td') # get all the <td> tags
+for td in tds:
+    print lxml.html.tostring(td) # the full HTML tag
+    print td.text                # just the text inside the HTML tag
 
 # -----------------------------------------------------------------------------
 # 2. Save the data in the ScraperWiki datastore.
