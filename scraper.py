@@ -19,7 +19,7 @@ for i in range(10):
 # -----------------------------------------------------------------------------
 
 import scraperwiki
-html = scraperwiki.scrape('https://scraperwiki.com/hello_world.html')
+html = scraperwiki.scrape('http://www.bbc.co.uk/news/uk-england-41060244')
 print html
 
 # -----------------------------------------------------------------------------
