@@ -42,9 +42,13 @@ for td in tds:
 # Check the 'Data' tab - here you'll see the data saved in the ScraperWiki store. 
 # -----------------------------------------------------------------------------
 
-#for td in tds:
-#     record = { "td" : td.text } # column name and value
-#     scraperwiki.sqlite.save(["td"], record) # save the records one by one
+# below is a for loop, inside the for loop is a dictionary. 
+# a dictionary stores pairs of information, which (I think) are the a column header and the...
+#... info that goes in the column. So for record = { "td" : td.text } "td" is the column header and td.txt givens the values to go in the colum 
+
+for td in tds:
+     record = { "td" : td.text } # column name and value
+     scraperwiki.sqlite.save(["td"], record) # save the records one by one
     
 # -----------------------------------------------------------------------------
 # Go back to the Tutorials page and continue to Tutorial 3 to learn about 
